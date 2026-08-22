@@ -1,0 +1,181 @@
+/* Variables (Scoped to match the dark theme) */
+:root {
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-purple: #a855f7;
+  --accent-hover: #c084fc;
+  --input-border: #334155;
+  --timeline-line: #334155;
+}
+
+/* Section Container */
+.education-section {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  padding: 5rem 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+}
+
+.education-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Heading */
+.education-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  background: linear-gradient(to right, var(--text-main), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Timeline Layout Base */
+.education-timeline {
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Center Line for Desktop */
+.education-timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: var(--timeline-line);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Individual Row Block */
+.education-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Left Alignment Blocks */
+.education-item-left {
+  left: 0;
+}
+
+/* Right Alignment Blocks */
+.education-item-right {
+  left: 50%;
+}
+
+/* Decorative Central Node Dots */
+.education-dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -8px;
+  background-color: var(--bg-dark);
+  border: 4px solid var(--accent-purple);
+  top: 32px;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 10px var(--accent-purple);
+}
+
+/* Flip Node Dot Position for Right Blocks */
+.education-item-right .education-dot {
+  left: -8px;
+}
+
+/* Content Information Cards */
+.education-card {
+  padding: 1.75rem;
+  background-color: var(--bg-card);
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid var(--input-border);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-purple);
+}
+
+/* Data Elements Inside Card */
+.education-date {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-hover);
+  background-color: rgba(168, 85, 247, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.education-degree {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.education-institution {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0 0 1rem 0;
+}
+
+.education-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  /* Move Central Line to Left Edge */
+  .education-timeline::after {
+    left: 20px;
+  }
+
+  /* Force Full Width Layout Blocks */
+  .education-item {
+    width: 100%;
+    padding-left: 45px;
+    padding-right: 0;
+  }
+
+  /* Reset Right Offset Mechanics */
+  .education-item-right {
+    left: 0%;
+  }
+
+  /* Realign All Indicator Dots to Left Axis */
+  .education-dot {
+    left: 12px;
+    right: auto;
+  }
+
+  .education-item-right .education-dot {
+    left: 12px;
+  }
+
+  .education-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .education-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+}

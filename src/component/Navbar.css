@@ -1,0 +1,163 @@
+/* Variables (Consistent Dark Theme Integration) */
+:root {
+  --bg-dark: #0f172a;
+  --bg-glass: rgba(15, 23, 42, 0.8);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-purple: #a855f7;
+  --accent-hover: #c084fc;
+  --nav-border: rgba(51, 65, 85, 0.5);
+}
+
+/* Nav Base Core */
+.navbar-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--nav-border);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Fixed Centered Frame container */
+.navbar-container {
+  max-width: 1200px;
+  height: 4.5rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Identity Typography */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #c084fc, var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-menu-desktop {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.navbar-link-desktop {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.navbar-link-desktop:hover {
+  color: var(--text-main);
+}
+
+/* Reactive Tracking Bar Underline Engine */
+.navbar-link-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent-purple), var(--accent-hover));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navbar-link-desktop:hover .navbar-link-underline {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar-toggle-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.75rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.navbar-toggle-btn:hover {
+  color: var(--accent-purple);
+}
+
+.navbar-menu-mobile {
+  position: absolute;
+  top: 4.5rem;
+  left: 0;
+  width: 100%;
+  background-color: #111827;
+  border-bottom: 1px solid var(--nav-border);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  gap: 1.25rem;
+  box-sizing: border-box;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  animation: slideDownNav 0.3s ease-out forwards;
+}
+
+.navbar-link-mobile {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.2);
+}
+
+.navbar-link-mobile:last-child {
+  border-bottom: none;
+}
+
+.navbar-link-mobile:hover {
+  color: var(--accent-hover);
+  padding-left: 0.5rem;
+}
+
+/* Entry Animation Sequence */
+@keyframes slideDownNav {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-menu-desktop {
+    display: none; /* Hide Desktop Arrays */
+  }
+
+  .navbar-toggle-btn {
+    display: block; /* Reveal Action Trigger Toggle */
+  }
+
+  .navbar-container {
+    padding: 0 1.25rem;
+  }
+}

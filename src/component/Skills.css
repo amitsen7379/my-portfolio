@@ -1,0 +1,187 @@
+/* Theme Configuration Core */
+:root {
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-purple: #a855f7;
+  --input-border: #334155;
+}
+
+/* Base Layout Wrapper */
+.skills-section {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  padding: 5rem 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Elements Typography */
+.skills-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(to right, var(--text-main), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin: 0 0 4rem 0;
+}
+
+/* Flex Auto Grid Core */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--input-border);
+  padding: 1.25rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Left Checkmark Nodes */
+.skill-icon-wrapper {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--text-main);
+  border: 1px solid var(--input-border);
+  flex-shrink: 0;
+}
+
+/* Typography Text Clusters */
+.skill-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.15rem 0;
+}
+
+.skill-category {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Right Side Floating Skill Level Badges */
+.skill-level-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--input-border);
+  color: var(--text-muted);
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Glow Orange: HTML5 & CSS3 */
+.skill-card.glow-orange:hover {
+  border-color: #f97316;
+  box-shadow: 0 10px 20px -5px rgba(249, 115, 22, 0.15);
+}
+.skill-card.glow-orange:hover .skill-icon-wrapper {
+  color: #f97316;
+  background-color: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+/* Glow Cyan: Tailwind CSS */
+.skill-card.glow-cyan:hover {
+  border-color: #06b6d4;
+  box-shadow: 0 10px 20px -5px rgba(6, 182, 212, 0.15);
+}
+.skill-card.glow-cyan:hover .skill-icon-wrapper {
+  color: #06b6d4;
+  background-color: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* Glow Blue: React.js */
+.skill-card.glow-blue:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.15);
+}
+.skill-card.glow-blue:hover .skill-icon-wrapper {
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Glow Yellow: JavaScript */
+.skill-card.glow-yellow:hover {
+  border-color: #eab308;
+  box-shadow: 0 10px 20px -5px rgba(234, 179, 8, 0.15);
+}
+.skill-card.glow-yellow:hover .skill-icon-wrapper {
+  color: #eab308;
+  background-color: rgba(234, 179, 8, 0.1);
+  border-color: rgba(234, 179, 8, 0.3);
+}
+
+/* Glow Emerald: Git & GitHub */
+.skill-card.glow-emerald:hover {
+  border-color: #10b981;
+  box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.15);
+}
+.skill-card.glow-emerald:hover .skill-icon-wrapper {
+  color: #10b981;
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .skills-subtitle {
+    margin-bottom: 2.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr; /* Stacks completely flat on compact screens */
+    gap: 1rem;
+  }
+}

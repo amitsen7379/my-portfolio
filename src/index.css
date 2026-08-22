@@ -1,0 +1,54 @@
+body {
+  padding-top: 4.5rem; /* Exactly balancing the height of the Navbar */
+}
+
+/* Universal Layout & Smooth Scrolling Base */
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding-top: 4.5rem; /* Balancing the fixed sticky desktop header height */
+  background-color: #0f172a; /* Deep charcoal slate foundation */
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Master Wrapper Layout Grid */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-footer {
+  background-color: #0b0f19; /* Slightly darker than card profiles */
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 2rem 1.25rem;
+  margin-top: auto; /* Pushes content down on empty views */
+  border-top: 1px solid rgba(51, 65, 85, 0.4);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 4.5rem; /* Retains desktop clearance layout safely */
+  }
+  
+  .app-footer {
+    font-size: 0.85rem;
+    padding: 1.5rem 1rem;
+  }
+}
