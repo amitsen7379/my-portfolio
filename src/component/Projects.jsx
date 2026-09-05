@@ -8,14 +8,14 @@ export function Projects() {
       title: 'AI Dashboard UI',
       description: 'A dark-themed user command panel for neural engine interactions with custom glassmorphism components.',
       tech: ['React', 'CSS Grid', 'Framer Logic'],
-      image: 'src/assets/Project1.png'
+      image: 'public/Project1.png'
     },
     {
       id: 2,
       title: 'Crypto Wallet Manager',
       description: 'Highly reactive asset monitoring hub supporting multiple currency structures and local sync.',
       tech: ['React', 'Vanilla CSS'],
-      image: 'src/assets/Project2.png' 
+      image: 'public/Project2.png' 
     }
   ];
 
