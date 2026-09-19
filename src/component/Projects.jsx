@@ -1,8 +1,8 @@
 import React from "react";
 import "./Projects.css";
 // 1. इमेजेस सही तरीके से इम्पोर्ट हो रही हैं
-import project1Img from "../assets/Project1.png";
-import project2Img from "../assets/Project2.png";
+import Project1Img from "../assets/Project1.png";
+import Project2Img from "../assets/Project2.png";
 
 export function Projects() {
   const projects = [
@@ -11,14 +11,14 @@ export function Projects() {
       title: 'AI Dashboard UI',
       description: 'A dark-themed user command panel for neural engine interactions with custom glassmorphism components.',
       tech: ['React', 'CSS Grid', 'Framer Logic'],
-      image: project1Img // 2. यहाँ स्ट्रिंग हटाकर वेरिएबल का नाम लिखें
+      image: Project1Img // 2. यहाँ स्ट्रिंग हटाकर वेरिएबल का नाम लिखें
     },
     {
       id: 2,
       title: 'Crypto Wallet Manager',
       description: 'Highly reactive asset monitoring hub supporting multiple currency structures and local sync.',
       tech: ['React', 'Vanilla CSS'],
-      image: project2Img // 2. यहाँ भी वेरिएबल का नाम लिखें
+      image: Project2Img // 2. यहाँ भी वेरिएबल का नाम लिखें
     }
   ];
 
